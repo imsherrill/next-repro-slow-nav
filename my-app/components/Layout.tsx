@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import styles from "./Layout.module.css"; // Import CSS module for styling
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -22,9 +23,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
-      {loading && <div>Loading...</div>}
-      <h1>Layout</h1>
-      {children}
+      <h1 className={styles.title}>My App</h1>
+      {loading && <div className={styles.loader}></div>}
+      <div className="border border-green m-1 p-4">{children}</div>
     </div>
   );
 }

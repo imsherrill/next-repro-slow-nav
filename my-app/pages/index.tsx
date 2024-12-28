@@ -1,33 +1,18 @@
-import Image from "next/image";
-import Link from "next/link"; // Import Link component
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Link from "next/link";
+import { Layout } from "@/components/Layout";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2">
-        <Link href="/simple-computation">Simple Computation</Link>
-        <Link href="/moderate-computation">Moderate Computation</Link>
-        <Link href="/heavy-computation">Heavy Computation</Link>
+    <div>
+      <main className="flex flex-col gap-2 row-start-2">
         <Link href="/very-heavy-computation">Very Heavy Computation</Link>
-        <Link href="/extreme-computation">Extreme Computation</Link>
-        <Link href="/simple-dom">Simple DOM</Link>
-        <Link href="/moderate-dom">Moderate DOM</Link>
-        <Link href="/heavy-dom">Heavy DOM</Link>
         <Link href="/very-heavy-dom">Very Heavy DOM</Link>
+        <Link href="/async-heavy-dom">Async Heavy DOM</Link>
       </main>
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
+};

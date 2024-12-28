@@ -2,22 +2,22 @@ import { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 
 export default function VeryHeavyDOM() {
-  const [result, setResult] = useState(0);
+  const [length, setLength] = useState(1);
 
   useEffect(() => {
-    let sum = 0;
-    for (let i = 0; i < 9e6; i++) {
-      sum += i;
-    }
-    setResult(sum);
+    // Example effect that could change the length state
+    const timer = setTimeout(() => {
+      setLength(1e5); // Change the length after 5 seconds
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div>
       <h1>Very Heavy DOM</h1>
-      <p>Computation result: {result}</p>
       <div>
-        {Array.from({ length: 9000 }, (_, i) => (
+        {Array.from({ length }, (_, i) => (
           <div key={i}>Element {i}</div>
         ))}
       </div>
