@@ -1,15 +1,16 @@
 import { useEffect, useId, useState } from "react";
 import { Layout } from "../components/Layout";
 import { useQuery } from "@tanstack/react-query";
+import { BIG_NUMBER } from "./_utils";
 
 export default function VeryHeavyDOM() {
   const id = useId();
   const { isLoading, data } = useQuery({
     queryKey: ["heavy-dom-async", id],
     queryFn: async () => {
-      return 1e5;
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return BIG_NUMBER;
     },
-    initialData: 1,
   });
 
   return (
@@ -20,7 +21,7 @@ export default function VeryHeavyDOM() {
       ) : (
         <p>
           Not loading. The number of elements to render is{" "}
-          {data.toLocaleString()}
+          {data?.toLocaleString()}
         </p>
       )}
       {isLoading ? (

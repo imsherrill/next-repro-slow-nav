@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { Layout } from "../components/Layout";
 import { useVirtualizer } from "@tanstack/react-virtual";
+import { BIG_NUMBER } from "./_utils";
 
 export default function VeryHeavyDOMVirt() {
-  const length = 1e5;
+  const length = BIG_NUMBER;
   const parentRef = useRef(undefined);
 
   const rowVirtualizer = useVirtualizer({

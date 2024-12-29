@@ -7,3 +7,5 @@ export function expensiveFn() {
   }
   return computationResult;
 }
+
+export const BIG_NUMBER = 1e6;
