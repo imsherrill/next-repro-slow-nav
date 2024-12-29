@@ -8,4 +8,4 @@ export function expensiveFn() {
   return computationResult;
 }
 
-export const BIG_NUMBER = 1e6;
+export const BIG_NUMBER = 1e5 * 4;

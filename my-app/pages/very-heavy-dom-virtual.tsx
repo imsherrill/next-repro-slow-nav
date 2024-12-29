@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Layout } from "../components/Layout";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { BIG_NUMBER } from "./_utils";
+import { BIG_NUMBER } from "../_utils";
 
 export default function VeryHeavyDOMVirt() {
   const length = BIG_NUMBER;

@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from "react";
 import { Layout } from "../components/Layout";
 import { useQuery } from "@tanstack/react-query";
-import { BIG_NUMBER } from "./_utils";
+import { BIG_NUMBER } from "../_utils";
 
 export default function VeryHeavyDOM() {
   const id = useId();

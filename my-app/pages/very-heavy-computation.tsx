@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import { expensiveFn } from "./_utils";
+import { expensiveFn } from "../_utils";
 
 export default function VeryHeavyComputation() {
   const computationResult = expensiveFn();
