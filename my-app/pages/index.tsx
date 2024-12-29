@@ -9,6 +9,9 @@ export default function Home() {
         <Link href="/very-heavy-dom">Very Heavy DOM</Link>
         <Link href="/async-heavy-dom">Async Heavy DOM</Link>
         <Link href="/very-heavy-dom-virtual">Very Heavy DOM Virtual</Link>
+        <Link href="/static">static</Link>
+        <Link href="/server-side">server</Link>
+        <Link href="/server-compute">server compute</Link>
       </main>
     </div>
   );
